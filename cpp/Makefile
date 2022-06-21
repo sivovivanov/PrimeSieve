@@ -8,7 +8,7 @@ buildimage:
 
 compile:
 	@echo "Compiling..."
-	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) g++ -Wall -Wextra -o /app/sieve.o /app/source.cpp
+	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) g++ -Wall -Wextra -O3 -o /app/sieve.o /app/source.cpp
 	@echo "Build successul!"
 
 run: compile
@@ -17,3 +17,4 @@ run: compile
 
 clean:
 	docker rmi $(IMGNAME):$(IMGTAG)
+	rm sieve*
