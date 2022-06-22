@@ -1,5 +1,7 @@
+include ../dockervars.mk
+
 CC = g++
-CCOPTS = -Wall -Wextra -O3 -o
+CFLAGS = -Wall -Wextra -O3 -o
 
 APPDIR = /app
 BUILDDIR = build
@@ -15,7 +17,7 @@ compile:
 	rm -rf $(BUILDDIR)/
 	mkdir $(BUILDDIR)/
 	@echo "Compiling..."
-	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(CC) $(CCOPTS) $(BINARY) $(APPDIR)/source.cpp
+	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(CC) $(CFLAGS) $(BINARY) $(APPDIR)/source.cpp
 	@echo "Build successul!"
 
 buildimage:

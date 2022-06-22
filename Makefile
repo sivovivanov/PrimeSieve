@@ -1,8 +1,3 @@
-export IMGNAME = sieveimg
-export IMGTAG = latest
-
-export CONTNAME = jeff
-
 all: python-sieve cpp-sieve
 
 python-sieve:
