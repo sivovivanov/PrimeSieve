@@ -1,7 +1,0 @@
-FROM ubuntu
-
-RUN apt-get update && \
-apt-get install -y python3-pip && \
-pip install numpy
-
-CMD ["/usr/bin/bash"]
