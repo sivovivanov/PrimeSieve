@@ -1,8 +1,6 @@
 include ../dockervars.mk
 
-run:
-	@echo "Running sieve..."
-	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) /usr/bin/python3 /app/source.py
+PY3 = /usr/bin/python3
 
-clean:
-	docker rmi $(IMGNAME):$(IMGTAG)
+run:
+	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(PY3) /app/source.py;

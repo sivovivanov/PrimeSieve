@@ -20,6 +20,7 @@ vector<int> sieve(int n) {
 }
 
 int main() {
+    cout << "--- Hello from C++" << endl;
     int num = 100;
     vector<int> prime = sieve(num);
 

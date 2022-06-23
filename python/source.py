@@ -12,6 +12,7 @@ def sieve(n):
     return prime
 
 if __name__ == "__main__":
+    print("--- Hello from Python")
     num   = 100
     prime = sieve(num)
 
