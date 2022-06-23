@@ -1,6 +1,6 @@
 include dockervars.mk
 
-all: python-sieve cpp-sieve
+all: python-sieve cpp-sieve java-sieve
 	@echo "Done!";
 
 python-sieve:
@@ -8,6 +8,9 @@ python-sieve:
 
 cpp-sieve:
 	cd cpp && $(MAKE);
+
+java-sieve:
+	cd java && $(MAKE);
 
 buildimage:
 	$(DOCKERCMD) build -t $(IMGNAME):$(IMGTAG) $(PWD);

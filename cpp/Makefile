@@ -10,7 +10,7 @@ BUILDNAME = sieve
 BINARY = $(APPDIR)/$(BUILDDIR)/$(BUILDNAME)
 
 run: compile
-	$(DOCKERCMD) run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(BINARY);
+	$(DOCKERCMD) run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(TIMECMD) $(BINARY);
 
 compile:
 	rm -rf $(BUILDDIR)/;
