@@ -10,11 +10,11 @@ BUILDNAME = sieve
 BINARY = $(APPDIR)/$(BUILDDIR)/$(BUILDNAME)
 
 run: compile
-	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(BINARY);
+	$(DOCKERCMD) run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(BINARY);
 
 compile:
 	rm -rf $(BUILDDIR)/;
 	mkdir $(BUILDDIR)/;
 	@echo "Compiling...";
-	docker run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(CC) $(CFLAGS) $(BINARY) $(APPDIR)/source.cpp;
+	$(DOCKERCMD) run --rm --name $(CONTNAME) -v "$(PWD)":/app $(IMGNAME):$(IMGTAG) $(CC) $(CFLAGS) $(BINARY) $(APPDIR)/source.cpp;
 	@echo "Build successul!";

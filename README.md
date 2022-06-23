@@ -4,3 +4,4 @@ Containerised sieve of Eratosthenes algorithm that finds all prime numbers up to
 # Implemented Languages
 - Python
 - C++
+- Java

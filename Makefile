@@ -10,8 +10,8 @@ cpp-sieve:
 	cd cpp && $(MAKE);
 
 buildimage:
-	docker build -t $(IMGNAME):$(IMGTAG) $(PWD);
+	$(DOCKERCMD) build -t $(IMGNAME):$(IMGTAG) $(PWD);
 
 clean:
-	docker rmi $(IMGNAME):$(IMGTAG);
+	$(DOCKERCMD) rmi $(IMGNAME):$(IMGTAG);
 	rm -rf ./*/build;
