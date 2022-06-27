@@ -1,6 +1,6 @@
 include dockervars.mk
 
-all: c-sieve cpp-sieve python-sieve java-sieve clean buildimage
+all: c-sieve cpp-sieve python-sieve java-sieve js-sieve clean buildimage
 	@echo "Done!";
 
 c-sieve:
@@ -13,6 +13,9 @@ python-sieve:
 	cd python && $(MAKE);
 
 java-sieve:
+	cd java && $(MAKE);
+
+js-sieve:
 	cd java && $(MAKE);
 
 buildimage:
