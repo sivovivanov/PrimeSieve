@@ -15,7 +15,7 @@ void sieve(int *prime) {
 }
 
 int main() {
-    printf("--- Hello from C");
+    printf("--- Hello from C\n");
 
     int prime[] = {[0 ... NUM] = 1};
     sieve(prime);

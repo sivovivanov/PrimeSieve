@@ -1,6 +1,7 @@
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y time
+# Necessary binaries
+RUN apt-get update && apt-get install -y time curl
 
 # Python
 RUN apt-get install -y python3-pip && \
@@ -14,5 +15,8 @@ RUN apt-get install -y default-jdk
 
 # JavaScript
 RUN apt-get install -y nodejs
+
+# Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 CMD ["/usr/bin/bash"]
