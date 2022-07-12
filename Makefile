@@ -1,6 +1,6 @@
 include dockervars.mk
 
-all: c-sieve cpp-sieve python-sieve java-sieve js-sieve rust-sieve clean buildimage
+all: c-sieve cpp-sieve python-sieve java-sieve js-sieve php-sieve rust-sieve clean buildimage
 	@echo "Done!";
 
 c-sieve:
@@ -18,6 +18,9 @@ java-sieve:
 js-sieve:
 	cd js && $(MAKE);
 
+php-sieve:
+	cd php && $(MAKE);
+
 rust-sieve:
 	cd rust && $(MAKE);
 
@@ -25,7 +28,7 @@ buildimage:
 	$(DOCKERCMD) build -t $(IMGNAME):$(IMGTAG) $(PWD);
 
 container:
-	$(DOCKERCMD) run -it --rm $(IMGNAME):$(IMGTAG);
+	$(DOCKERCMD) run -it --rm --name $(CONTNAME) $(IMGNAME):$(IMGTAG);
 
 clean:
 	$(DOCKERCMD) rmi $(IMGNAME):$(IMGTAG);
