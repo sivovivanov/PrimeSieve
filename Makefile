@@ -1,6 +1,6 @@
 include dockervars.mk
 
-all: c-sieve cpp-sieve python-sieve java-sieve js-sieve php-sieve rust-sieve clean buildimage
+all: c-sieve cpp-sieve python-sieve java-sieve js-sieve php-sieve rust-sieve
 	@echo "Done!";
 
 c-sieve:
